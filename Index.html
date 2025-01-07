@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>
+        Account creator
+        </title>
+    </head>
+    <body>
+        <h1>Create your Account</h1>
+        <p>Enter the details of your superhero</p>
+        <label>Name: <input type="text"id="name"></label><br>
+        <label>Password: <input type="password"id="Password"></label><br>
+        <label>Age: <input type="number"id="Age"></label><br><br><br>
+        <button onclick="createSuperhero()">Show Superhero JSON</button>
+        <h2>Your Superhero JSON</h2>
+        <pre id="output"></pre>
+        <script>
+            function createSuperhero(){
+                //Get the values
+                var Name = document.getElementById("name").value;
+                var password = document.getElementById("Password").value;
+                var Age = document.getElementById("Age").value;
+
+                // create the JSON object
+                var superhero = {
+                    name: Name,
+                    Password: Password,
+                    Age: Age
+                };
+                // Display the JSON
+                document.getElementById("output").textContent = JSON.stringify(superhero, null, 2);
+            }
+        </script>
+    </body>
+</html>
